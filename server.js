@@ -95,9 +95,9 @@ async function fetchCoins() {
     }));
 
     lastFetchTime = Date.now();
-    console.log("✅ Coins updated:", new Date().toLocaleTimeString());
+    console.log("Coins updated:", new Date().toLocaleTimeString());
   } catch (err) {
-    console.error("❌ Error fetching CoinMarketCap:", err.message);
+    console.error("Error fetching CoinMarketCap:", err.message);
   }
 }
 
@@ -113,10 +113,10 @@ app.get("/api/coins", async (req, res) => {
   else res.status(500).json({ error: "No data available" });
 });
 
-// ✅ Default route for testing
+// Default route for testing
 app.get("/", (req, res) => {
-  res.send("🚀 Crypto Backend Running — Vercel Serverless Active");
+  res.send(" Crypto Backend Running — Vercel Serverless Active");
 });
 
-// ❗ Export instead of app.listen() — Vercel requirement
+// Export instead of app.listen() — Vercel requirement
 module.exports = app;
